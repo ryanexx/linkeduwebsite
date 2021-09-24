@@ -6,6 +6,7 @@
           <v-card color="#ffffffbe">
             <v-system-bar color="primary"></v-system-bar>
             <v-card-text class="my-4 text-center title">
+              <v-icon>mdi-check</v-icon>
               <span style="text-shadow: 1px 1px 1px black; margin-right: 5px">
                 VALORACIÓN DE LA HERRAMIENTA
               </span>
@@ -38,8 +39,8 @@
             </v-container>
             <center>
               <v-btn color="primary" href="/start">
-                <v-icon left> mdi-check </v-icon>
-                IR A VALORAR
+                <v-icon left> mdi-home </v-icon>
+                IR A INICIO
               </v-btn>
             </center>
             <br />

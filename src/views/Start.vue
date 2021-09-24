@@ -45,6 +45,17 @@
                 <source :src="videoTuto" type="video/mp4" />
                 Su navegador no soporta este vídeo.
               </video>
+              <v-card-text class="text-justify title">
+                <center>
+                  <span style="color: black">
+                    Conoce sobre nuestra herramienta tecno educativa destinada a
+                    facilitar la gestión de enlaces de conexiones remotas de las
+                    clases en línea, podrás clasificar tus enlaces con sus
+                    respectivas asignaturas y tenerlas a disposición por
+                    horario. Atrévete a conocer LinkEdu.
+                  </span>
+                </center>
+              </v-card-text>
               <br />
               <v-btn color="primary" href="/downloads">
                 <v-icon left> mdi-download </v-icon>

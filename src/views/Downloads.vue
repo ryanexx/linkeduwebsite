@@ -26,7 +26,7 @@
                   md="6"
                   sm="6"
                 >
-                  <v-card class="mx-auto" color="#26c6da" dark max-width="400">
+                  <v-card class="mx-auto" color="#26c6da" dark max-width="90%">
                     <div>
                       <v-icon large left> {{ data.icon }} </v-icon>
                       <v-chip class="ma-2" color="primary">
@@ -66,7 +66,26 @@
                           </v-radio-group>
                         </v-col>
                       </v-row>
+
                       <center>
+                        <v-img
+                          v-if="num == 0"
+                          :src="data.data[1].snap[data.data[1].select]"
+                          class="white--text align-end"
+                          width="150px"
+                          style="border-radius: 20px;"
+                        >
+                        </v-img>
+                        <v-img
+                          v-else
+                          :src="data.data[1].snap[data.data[0].select]"
+                          class="white--text align-end"
+                          width="150px"
+                          style="border-radius: 20px;"
+
+                        >
+                        </v-img>
+                        <br />
                         <v-btn
                           color="primary"
                           @click="
@@ -108,7 +127,6 @@ export default {
   components: {
     Footer,
   },
-  Valoresname: "Papers",
   data() {
     return {
       panel: [],
@@ -118,7 +136,7 @@ export default {
       iconmobile: require("@/assets/images/downloads/mobile.svg"),
       archives: [
         {
-          title: "DISPOSITIVOS MOVILES",
+          title: "DISPOSITIVOS MÓVILES",
           icon: "mdi-apps",
           iconDevice: require("@/assets/images/downloads/mobile.svg"),
           type: "APP",
@@ -139,6 +157,14 @@ export default {
                 "https://drive.google.com/file/d/1RCMJ0mKDsNtVBQEsIbycH5vbvIf33H3s/view",
                 "https://drive.google.com/file/d/1jORlhO_CT5AnIHx9gIY1YPBq-3Z367M3/view",
                 "https://drive.google.com/file/d/12uvJpzU_DzKyOzmzfzi9LT4ZHjm6pSeA/view",
+              ],
+              snap: [
+                require("@/assets/images/downloads/m0.jpg"),
+                require("@/assets/images/downloads/m1.jpg"),
+                require("@/assets/images/downloads/m2.jpg"),
+                require("@/assets/images/downloads/m3.jpg"),
+                require("@/assets/images/downloads/m4.jpg"),
+                require("@/assets/images/downloads/m5.jpg"),
               ],
             },
           ],
@@ -162,6 +188,10 @@ export default {
               archives: [
                 "https://drive.google.com/file/d/1dUS4CStRQl_3IOPz7nqpUTt2UVGIHHSm/view?usp=sharing",
                 "https://drive.google.com/file/d/1BF18JTh1ymOuXyXXQYaE4ST5yNfL8ir2/view?usp=sharing",
+              ],
+              snap: [
+                require("@/assets/images/downloads/d0.jpg"),
+                require("@/assets/images/downloads/d1.jpg"),
               ],
             },
           ],

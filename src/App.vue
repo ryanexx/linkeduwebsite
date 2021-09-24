@@ -28,18 +28,18 @@ import Loader from "./components/System/Loader";
 export default {
   name: "App",
   metaInfo: {
-    title: 'RECURSOS EDUCATIVOS UTMACH ',
-    titleTemplate: 'REPOSITORIO G11 | %s ',
+    title: 'ORGANIZADOR ACADÉMICO UTMACH ',
+    titleTemplate: 'LINKEDU | %s ',
     htmlAttrs: {
       lang: 'es-EC'
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'description', content: 'RepositorioG11 | RECURSO EDUCATIVO GAMIFICADO DE APOYO ESTUDIANTIL DE INGLES Y HISTORIA' },
-      { name: 'keywords', content: 'Recurso educativo, Gamificación, Ingles, Historia, APP Movil, Juego' },
+      { name: 'description', content: 'LINKEDU | ORGANIZADOR ACADÉMICO DE APOYO A LAS ACTIVIDADES EN LINEA' },
+      { name: 'keywords', content: 'Recurso educativo, Organizador, Enlaces, Software, APP Movil, E-learning' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: "RepositorioG11 | RECURSO EDUCATIVO GAMIFICADO DE APOYO ESTUDIANTIL DE INGLES Y HISTORIA"},
-      { property: 'og:site_name', content: 'RepositorioG11'},
+      { property: 'og:title', content: "LINKEDU | ORGANIZADOR ACADÉMICO DE APOYO A LAS ACTIVIDADES EN LINEA"},
+      { property: 'og:site_name', content: 'LINKEDU'},
       { property: 'og:type', content: 'website'},    
       { name: 'robots', content: 'index,follow'} 
     ]
