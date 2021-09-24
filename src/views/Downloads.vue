@@ -11,101 +11,106 @@
                 DESCARGAR LINKEDU
               </span>
             </v-card-text>
-            <v-container
-              class="mx-auto"
-              max-width="100%"
-              style="margin-top: 30px; margin-bottom: 40px"
-              color="primary"
-            >
-              <v-row>
-                <v-col
-                  v-for="(data, num) in archives"
-                  :key="num"
-                  lg="6"
-                  cols="12"
-                  md="6"
-                  sm="6"
+            <center>
+              <div style="width: 85%">
+                <v-container
+                  class="mx-auto"
+                  style="margin-top: 30px; margin-bottom: 40px"
+                  color="primary"
                 >
-                  <v-card class="mx-auto" color="#26c6da" dark max-width="90%">
-                    <div>
-                      <v-icon large left> {{ data.icon }} </v-icon>
-                      <v-chip class="ma-2" color="primary">
-                        {{ data.type }}
-                      </v-chip>
-                      <center>
-                        <v-img
-                          :src="data.iconDevice"
-                          class="white--text align-end"
-                          width="150px"
-                        >
-                        </v-img>
-                        <v-card-text class="my-4 text-center title">
-                          <v-icon>mdi-download</v-icon>
-                          <span
-                            style="
-                              text-shadow: 1px 1px 1px black;
-                              margin-right: 5px;
-                            "
-                          >
-                            {{ data.title }}
-                          </span>
-                        </v-card-text>
-                      </center>
-                      <v-row v-for="(data2, num2) in data.data" :key="num2">
-                        <v-col lg="1" cols="1" md="1" sm="1"></v-col>
-                        <v-col lg="10" cols="10" md="10" sm="10">
-                          <h3>{{ data2.subTitle }}</h3>
-
-                          <v-radio-group v-model="data2.select">
-                            <v-radio
-                              v-for="(data3, num3) in data2.options"
-                              :key="num3"
-                              :label="data3"
-                              :value="num3"
-                            ></v-radio>
-                          </v-radio-group>
-                        </v-col>
-                      </v-row>
-
-                      <center>
-                        <v-img
-                          v-if="num == 0"
-                          :src="data.data[1].snap[data.data[1].select]"
-                          class="white--text align-end"
-                          width="150px"
-                          style="border-radius: 20px;"
-                        >
-                        </v-img>
-                        <v-img
-                          v-else
-                          :src="data.data[1].snap[data.data[0].select]"
-                          class="white--text align-end"
-                          width="150px"
-                          style="border-radius: 20px;"
-
-                        >
-                        </v-img>
-                        <br />
-                        <v-btn
-                          color="primary"
-                          @click="
-                            archiveDownload(
-                              num,
-                              data.data[0].select,
-                              data.data[1].select
-                            )
-                          "
-                        >
-                          <v-icon left> mdi-download </v-icon>
-                          DESCARGAR
-                        </v-btn>
-                      </center>
-                      <br />
-                    </div>
-                  </v-card>
-                </v-col>
-              </v-row>
-            </v-container>
+                  <v-row>
+                    <v-col
+                      v-for="(data, num) in archives"
+                      :key="num"
+                      lg="6"
+                      cols="12"
+                      md="6"
+                      sm="6"
+                    >
+                      <v-card
+                        class="mx-auto"
+                        color="#26c6da"
+                        dark
+                        max-width="90%"
+                      >
+                        <div>
+                          <v-icon large left> {{ data.icon }} </v-icon>
+                          <v-chip class="ma-2" color="primary">
+                            {{ data.type }}
+                          </v-chip>
+                          <center>
+                            <v-img
+                              :src="data.iconDevice"
+                              class="white--text align-end"
+                              width="150px"
+                            >
+                            </v-img>
+                            <v-card-text class="my-4 text-center title">
+                              <v-icon>mdi-download</v-icon>
+                              <span
+                                style="
+                                  text-shadow: 1px 1px 1px black;
+                                  margin-right: 5px;
+                                "
+                              >
+                                {{ data.title }}
+                              </span>
+                            </v-card-text>
+                          </center>
+                          <v-row v-for="(data2, num2) in data.data" :key="num2">
+                            <v-col lg="1" cols="1" md="1" sm="1"></v-col>
+                            <v-col lg="10" cols="10" md="10" sm="10">
+                              <h3>{{ data2.subTitle }}</h3>
+                              <v-radio-group v-model="data2.select">
+                                <v-radio
+                                  v-for="(data3, num3) in data2.options"
+                                  :key="num3"
+                                  :label="data3"
+                                  :value="num3"
+                                ></v-radio>
+                              </v-radio-group>
+                            </v-col>
+                          </v-row>
+                          <center>
+                            <v-img
+                              v-if="num == 0"
+                              :src="data.data[1].snap[data.data[1].select]"
+                              class="white--text align-end"
+                              width="150px"
+                              style="border-radius: 20px"
+                            >
+                            </v-img>
+                            <v-img
+                              v-else
+                              :src="data.data[1].snap[data.data[0].select]"
+                              class="white--text align-end"
+                              width="150px"
+                              style="border-radius: 20px"
+                            >
+                            </v-img>
+                            <br />
+                            <v-btn
+                              color="primary"
+                              @click="
+                                archiveDownload(
+                                  num,
+                                  data.data[0].select,
+                                  data.data[1].select
+                                )
+                              "
+                            >
+                              <v-icon left> mdi-download </v-icon>
+                              DESCARGAR
+                            </v-btn>
+                          </center>
+                          <br />
+                        </div>
+                      </v-card>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </div>
+            </center>
             <center>
               <v-btn color="primary" href="/assess">
                 <v-icon left> mdi-check </v-icon>
@@ -122,7 +127,6 @@
 </template>
 <script>
 import Footer from "@/components/Default/Footer";
-
 export default {
   components: {
     Footer,
@@ -222,7 +226,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .header-login {
   display: flex;

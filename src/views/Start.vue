@@ -14,19 +14,22 @@
                   ORGANIZADOR ACADÉMICO DE APOYO A LAS ACTIVIDADES EN LINEA.
                 </span>
               </v-card-text>
-              <v-carousel
-                style="border-radius: 15px"
-                cycle
-                hide-delimiter-background
-                show-arrows-on-hover
-              >
-                <v-carousel-item
-                  v-for="(item, i) in items"
-                  :key="i"
-                  :src="item.src"
+              <div style="width: 80%">
+                <v-carousel
+                  style="border-radius: 15px"
+                  cycle
+                  hide-delimiter-background
+                  show-arrows-on-hover
                 >
-                </v-carousel-item>
-              </v-carousel>
+                  <v-carousel-item
+                    v-for="(item, i) in items"
+                    :key="i"
+                    :src="item.src"
+                    width="100%"
+                  >
+                  </v-carousel-item>
+                </v-carousel>
+              </div>
               <br />
               <br />
               <v-card-text class="my-4 text-center title">
@@ -37,8 +40,7 @@
               </v-card-text>
               <video
                 style="border-radius: 15px"
-                width="600px"
-                height="350px"
+                width="80%"
                 :poster="videoTutoTh"
                 controls
               >
@@ -76,7 +78,6 @@
 </template>
 <script>
 import Footer from "@/components/Default/Footer";
-
 export default {
   components: {
     Footer,
@@ -115,7 +116,6 @@ export default {
   methods: {},
 };
 </script>
-
 <style scoped>
 .header-login {
   display: flex;

@@ -69,7 +69,6 @@
     </v-bottom-navigation>
   </div>
 </template>
-
 <script>
 export default {
   components: {},
@@ -101,7 +100,6 @@ export default {
 </script>
 <style>
 /* DESKTOP */
-
 @media all and (max-width: 999999999px) and (min-width: 1340px) {
   /* Footer Parent Div Styling */
   #loginbtn {
@@ -113,9 +111,7 @@ export default {
     margin-top: 30px !important;
   }
 }
-
 /* =TABLET */
-
 @media all and (max-width: 1339px) and (min-width: 600px) {
   /* Footer Parent Div Styling */
   #loginbtn {
@@ -127,9 +123,7 @@ export default {
     margin: 0 auto;
   }
 }
-
 /* MOBILE */
-
 @media all and (max-width: 599px) and (min-width: 100px) {
   /* Footer Parent Div Styling */
   #logologin {

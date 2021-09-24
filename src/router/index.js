@@ -38,7 +38,6 @@ const router = new VueRouter({
   routes,
   mode: 'history'
 })
-
 router.beforeEach((to, from, next) => {
   if (to.meta.auth === undefined) { return next(); }
   const authRoute = (to.meta.auth);

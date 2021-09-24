@@ -5,12 +5,15 @@
         <Loader show message="''" />
       </div>
     </div>
-    <v-app v-else >
-       <Navbar style="position: fixed; z-index: 99; width: 100%; background:#25425E"> </Navbar>
-       <Navbar> </Navbar>
-      <v-content v-if="$store.getters.isAuth" >
-        <v-container fluid >
-          <v-row justify="center" >
+    <v-app v-else>
+      <Navbar
+        style="position: fixed; z-index: 99; width: 100%; background: #25425e"
+      >
+      </Navbar>
+      <Navbar> </Navbar>
+      <v-content v-if="$store.getters.isAuth">
+        <v-container fluid>
+          <v-row justify="center">
             <v-col cols="12 pt-0">
               <router-view />
             </v-col>
@@ -19,7 +22,6 @@
       </v-content>
       <router-view :style="{ backgroundImage: 'url(' + bga + ')' }" v-else />
     </v-app>
-    
   </div>
 </template>
 <script>
@@ -28,47 +30,43 @@ import Loader from "./components/System/Loader";
 export default {
   name: "App",
   metaInfo: {
-    title: 'ORGANIZADOR ACADÉMICO UTMACH ',
-    titleTemplate: 'LINKEDU | %s ',
+    title: "ORGANIZADOR ACADÉMICO UTMACH ",
+    titleTemplate: "LINKEDU | %s ",
     htmlAttrs: {
-      lang: 'es-EC'
+      lang: "es-EC",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'description', content: 'LINKEDU | ORGANIZADOR ACADÉMICO DE APOYO A LAS ACTIVIDADES EN LINEA' },
-      { name: 'keywords', content: 'Recurso educativo, Organizador, Enlaces, Software, APP Movil, E-learning' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: "LINKEDU | ORGANIZADOR ACADÉMICO DE APOYO A LAS ACTIVIDADES EN LINEA"},
-      { property: 'og:site_name', content: 'LINKEDU'},
-      { property: 'og:type', content: 'website'},    
-      { name: 'robots', content: 'index,follow'} 
-    ]
+      { charset: "utf-8" },
+      {
+        name: "description",
+        content:
+          "LINKEDU | ORGANIZADOR ACADÉMICO DE APOYO A LAS ACTIVIDADES EN LINEA",
+      },
+      {
+        name: "keywords",
+        content:
+          "Recurso educativo, Organizador, Enlaces, Software, APP Movil, E-learning",
+      },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        property: "og:title",
+        content:
+          "LINKEDU | ORGANIZADOR ACADÉMICO DE APOYO A LAS ACTIVIDADES EN LINEA",
+      },
+      { property: "og:site_name", content: "LINKEDU" },
+      { property: "og:type", content: "website" },
+      { name: "robots", content: "index,follow" },
+    ],
   },
   data: () => ({
     auth: false,
-          bga: require("@/assets/images/bg.svg"),
-
+    bga: require("@/assets/images/bg.svg"),
   }),
-  beforeMount: async function () {
-   
-  },
-beforeCreate(){
-
-},
-created() {    
-
-  },
-  mounted() {
-
-  },
   components: {
-Navbar,
-
-Loader,
+    Navbar,
+    Loader,
   },
-  methods: {
-   
-  },
+  methods: {},
 };
 </script>
 <style>

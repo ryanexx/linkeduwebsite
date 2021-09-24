@@ -17,25 +17,27 @@
               style="margin-top: 30px; margin-bottom: 40px"
               color="primary"
             >
-              <template>
-                <v-card>
+              <center>
+                <div style="width: 80% ;">
                   <v-btn color="primary" @click="openForm(urlResource)">
                     <v-icon left> mdi-eye </v-icon>
                     ABRIR FORMULARIO
                   </v-btn>
-                  <fieldset>
-                    <iframe
-                      :src="urlResource"
-                      width="100%"
-                      height="2000"
-                      frameborder="0"
-                      marginheight="0"
-                      marginwidth="0"
-                      >Cargando…</iframe
-                    >
-                  </fieldset>
-                </v-card>
-              </template>
+                  <v-card>
+                    <fieldset>
+                      <iframe
+                        :src="urlResource"
+                        width="100%"
+                        height="2000"
+                        frameborder="0"
+                        marginheight="0"
+                        marginwidth="0"
+                        >Cargando…</iframe
+                      >
+                    </fieldset>
+                  </v-card>
+                </div>
+              </center>
             </v-container>
             <center>
               <v-btn color="primary" href="/start">
