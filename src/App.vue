@@ -17,7 +17,7 @@
           </v-row>
         </v-container>
       </v-content>
-      <router-view :style="{ backgroundImage: 'url(' + bga + ')' }" class="cont" v-else />
+      <router-view :style="{ backgroundImage: 'url(' + bga + ')' }" v-else />
     </v-app>
     
   </div>
@@ -72,9 +72,6 @@ Loader,
 };
 </script>
 <style>
- .cont {
-        background-color: red;
-    }
 .alert-family {
   font-family: Quicksand, sans-serif;
   line-height: 1.5;

@@ -67,14 +67,10 @@ export default {
   created() {},
   mounted() {
     if (this.$route) this.route = this.$route.query.redirect;
-    this.all();
   },
   methods: {
     openForm(aux) {
       window.open(aux);
-    },
-    all() {
-      this.panel = [...Array(this.items.length).keys()].map((k, i) => i);
     },
   },
 };

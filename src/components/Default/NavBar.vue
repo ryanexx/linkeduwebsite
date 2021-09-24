@@ -34,7 +34,6 @@
       </p>
     </center>
     <v-bottom-navigation
-      color="red"
       background-color="transparent"
       dark
       :shift="activeShift"
