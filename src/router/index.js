@@ -18,27 +18,15 @@ Vue.use(VueMeta)
       meta: { auth: false }
     },
     {
-      path: '/resources',
-      name: 'Recursos',
-      component: () => import(/* webpackChunkName: "about" */ '../views/Resources.vue'),
+      path: '/downloads',
+      name: 'Descargas',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Downloads.vue'),
       meta: { auth: false }
     },
     {
-      path: '/about',
-      name: 'Acerca',
-      component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-      meta: { auth: false }
-    },
-    {
-      path: '/papers',
-      name: 'Revistas',
-      component: () => import(/* webpackChunkName: "papers" */ '../views/Papers.vue'),
-      meta: { auth: false }
-    },
-    {
-      path: '/proyect',
-      name: 'Proyecto',
-      component: () => import(/* webpackChunkName: "contact" */ '../views/Proyect.vue'),
+      path: '/assess',
+      name: 'Valorar',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Assess.vue'),
       meta: { auth: false }
     },
     {

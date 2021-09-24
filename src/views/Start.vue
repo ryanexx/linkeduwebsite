@@ -1,17 +1,25 @@
 <template>
   <div id="home">
-    <v-container style="margin-top: 25px ;" >
+    <v-container style="margin-top: 25px">
       <v-row align="center" justify="center">
         <v-col lg="12" md="12" sm="12">
           <v-card color="#ffffffbe">
             <v-system-bar color="primary"></v-system-bar>
             <center>
               <v-card-text class="my-4 text-center title">
+                <img :src="logoLinkedu" alt="" width="30%" />
+                <br />
+                <v-icon>mdi-link</v-icon>
                 <span style="text-shadow: 1px 1px 1px black; margin-right: 5px">
-                  PEDAGOGÍA DE LAS CIENCIAS EXPERIMENTALES
+                  ORGANIZADOR ACADÉMICO DE APOYO A LAS ACTIVIDADES EN LINEA.
                 </span>
               </v-card-text>
-              <v-carousel style="border-radius: 15px;" cycle hide-delimiter-background show-arrows-on-hover>
+              <v-carousel
+                style="border-radius: 15px"
+                cycle
+                hide-delimiter-background
+                show-arrows-on-hover
+              >
                 <v-carousel-item
                   v-for="(item, i) in items"
                   :key="i"
@@ -19,75 +27,35 @@
                 >
                 </v-carousel-item>
               </v-carousel>
+              <br />
+              <br />
               <v-card-text class="my-4 text-center title">
+                <v-icon>mdi-movie</v-icon>
                 <span style="text-shadow: 1px 1px 1px black; margin-right: 5px">
-                  VIDEOS RECURSOS EDUCATIVOS
+                  VIDEO TUTORIAL
                 </span>
               </v-card-text>
-                <v-row>
-                <v-col cols="12" lg="6" md="6" sm="6">
-                  <v-card-text class="my-4 text-center title">
-                    <span
-                      style="text-shadow: 1px 1px 1px black; margin-right: 5px"
-                    >
-                      RECURSO AVAENGLISH
-                    </span>
-                  </v-card-text>
-                  <video style="border-radius: 15px;" width="90%" height="300px" :poster="videoPT1" controls>
-                    <source :src="videoP1" type="video/mp4" />
-                    Su navegador no soporta este vídeo.
-                  </video>
-                </v-col>
-                <v-col cols="12" lg="6" md="6" sm="6">
-                  <v-card-text class="my-4 text-center title">
-                    <span
-                      style="text-shadow: 1px 1px 1px black; margin-right: 5px"
-                    >
-                      RECURSO HISTORY QUIZ
-                    </span>
-                  </v-card-text>
-                  <video style="border-radius: 15px;" width="90%" height="300px" :poster="videoPT2" controls>
-                    <source :src="videoP2" type="video/mp4" />
-                    Su navegador no soporta este vídeo.
-                  </video>
-                </v-col>
-              </v-row>
-                <v-row>
-                <v-col cols="12" lg="6" md="6" sm="6">
-                  <v-card-text class="my-4 text-center title">
-                    <span
-                      style="text-shadow: 1px 1px 1px black; margin-right: 5px"
-                    >
-                      TUTORIAL AVAENGLISH
-                    </span>
-                  </v-card-text>
-                  <video style="border-radius: 15px;" width="90%" height="300px" :poster="videoTT1" controls>
-                    <source :src="videoT1" type="video/mp4" />
-                    Su navegador no soporta este vídeo.
-                  </video>
-                </v-col>
-                <v-col cols="12" lg="6" md="6" sm="6">
-                  <v-card-text class="my-4 text-center title">
-                    <span
-                      style="text-shadow: 1px 1px 1px black; margin-right: 5px"
-                    >
-                      TUTORIAL HISTORY QUIZ
-                    </span>
-                  </v-card-text>
-                  <video style="border-radius: 15px;" width="90%" height="300px" :poster="videoTT2" controls>
-                    <source :src="videoT2" type="video/mp4" />
-                    Su navegador no soporta este vídeo.
-                  </video>
-                </v-col>
-              </v-row>
-
+              <video
+                style="border-radius: 15px"
+                width="600px"
+                height="350px"
+                :poster="videoTutoTh"
+                controls
+              >
+                <source :src="videoTuto" type="video/mp4" />
+                Su navegador no soporta este vídeo.
+              </video>
+              <br />
+              <v-btn color="primary" href="/downloads">
+                <v-icon left> mdi-download </v-icon>
+                IR A DESCARGAS
+              </v-btn>
             </center>
-            
+            <br />
           </v-card>
         </v-col>
       </v-row>
     </v-container>
-
     <v-row align="center" justify="center">
       <v-col cols="12" lg="12" md="12" sm="12">
         <Footer></Footer>
@@ -105,15 +73,9 @@ export default {
   name: "Start",
   data() {
     return {
-      videoP1: require("@/assets/videos/promo/avae.mp4"),
-      videoPT1: require("@/assets/images/thumbnail/avaept.jpg"),
-      videoP2: require("@/assets/videos/promo/hq.mp4"),
-      videoPT2: require("@/assets/images/thumbnail/hqpt.jpg"),
-      videoT1: require("@/assets/videos/tuto/avae.mp4"),
-      videoTT1: require("@/assets/images/thumbnail/avaett.jpg"),
-      videoT2: require("@/assets/videos/tuto/hq.mp4"),
-      videoTT2: require("@/assets/images/thumbnail/hqtt.jpg"),
-      
+      logoLinkedu: require("@/assets/images/icons/logolinkedu.svg"),
+      videoTuto: require("@/assets/videos/linkeduTuto.mp4"),
+      videoTutoTh: require("@/assets/images/thumbnail/videoTutoTh.jpg"),
       items: [
         {
           src: require("@/assets/images/slider/slider1.jpg"),
@@ -124,11 +86,14 @@ export default {
         {
           src: require("@/assets/images/slider/slider3.jpg"),
         },
-{
-          src: require("@/assets/images/resources/avaebg.gif"),
+        {
+          src: require("@/assets/images/slider/slider4.gif"),
         },
         {
-          src: require('@/assets/images/resources/hqbg.gif'),
+          src: require("@/assets/images/slider/slider5.jpg"),
+        },
+        {
+          src: require("@/assets/images/slider/slider6.jpg"),
         },
       ],
     };

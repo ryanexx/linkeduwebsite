@@ -2,49 +2,43 @@
   <div>
     <center>
       <v-row>
-        <v-col lg="4" cols="4" md="4" sm="4">
-        </v-col>
+        <v-col lg="4" cols="4" md="4" sm="4"> </v-col>
         <v-col lg="4" cols="4" md="4" sm="4">
           <v-row>
-            <v-col 
-             v-for="(cont, j) in headerImg"
-                      :key="j"
-            lg="4" cols="4" md="4" sm="4">
+            <v-col
+              v-for="(cont, j) in headerImg"
+              :key="j"
+              lg="4"
+              cols="4"
+              md="4"
+              sm="4"
+            >
               <v-img
-              style="border-radius: 10%;"
+                style="border-radius: 10%"
                 class="mt-1"
                 alt="Vuetify Logo"
                 contain
-               :src=cont.img
+                :src="cont.img"
                 transition="scale-transition"
                 width="30"
               />
             </v-col>
-  
           </v-row>
         </v-col>
       </v-row>
-          <p 
-          
-          style="font-size: x-small; color: white">
-          <span
-           v-for="(cont, j) in headerText"
-                      :key="j"
-          >
-{{cont.text}}
-<br>
-          </span>
-          </p>
-
+      <p style="font-size: x-small; color: white">
+        <span v-for="(cont, j) in headerText" :key="j">
+          {{ cont.text }}
+          <br />
+        </span>
+      </p>
     </center>
-
     <v-bottom-navigation
       color="red"
       background-color="transparent"
       dark
       :shift="activeShift"
     >
-    
       <v-btn v-if="this.$route.name == 'Inicio'" color="red" href="/start">
         <span>INICIO</span>
         <v-icon>mdi-home</v-icon>
@@ -53,44 +47,25 @@
         <span>INICIO</span>
         <v-icon>mdi-home</v-icon>
       </v-btn>
-      <v-btn v-if="this.$route.name == 'Proyecto'" color="red" href="/proyect">
-        <span>PROYECTO</span>
-
-        <v-icon>mdi-star</v-icon>
+      <v-btn
+        v-if="this.$route.name == 'Descargas'"
+        color="red"
+        href="/downloads"
+      >
+        <span>DESCARGAS</span>
+        <v-icon>mdi-download</v-icon>
       </v-btn>
-      <v-btn v-else href="/proyect">
-        <span>PROYECTO</span>
-
-        <v-icon>mdi-star</v-icon>
+      <v-btn v-else href="/downloads">
+        <span>DESCARGAS</span>
+        <v-icon>mdi-download</v-icon>
       </v-btn>
-
-      <v-btn v-if="this.$route.name == 'Recursos'" color="red" href="/resources">
-        <span>RECURSOS</span>
-
-        <v-icon>mdi-gamepad</v-icon>
+      <v-btn v-if="this.$route.name == 'Valorar'" color="red" href="/Assess">
+        <span>VALORAR</span>
+        <v-icon>mdi-check</v-icon>
       </v-btn>
-      <v-btn v-else href="/resources">
-        <span>RECURSOS</span>
-
-        <v-icon>mdi-gamepad</v-icon>
-      </v-btn>
-      <v-btn v-if="this.$route.name == 'Acerca'" color="red" href="/about">
-        <span>¿QUIÉNES SOMOS?</span>
-        <v-icon>mdi-school</v-icon>
-      </v-btn>
-      <v-btn v-else href="/about">
-        <span>¿QUIÉNES SOMOS?</span>
-        <v-icon>mdi-school</v-icon>
-      </v-btn>
-      <v-btn v-if="this.$route.name == 'Revistas'" color="red" href="/papers">
-        <span>REVISTAS</span>
-
-        <v-icon>mdi-note</v-icon>
-      </v-btn>
-      <v-btn v-else href="/papers">
-        <span>REVISTAS</span>
-
-        <v-icon>mdi-note</v-icon>
+      <v-btn v-else href="/assess">
+        <span>VALORAR</span>
+        <v-icon>mdi-check</v-icon>
       </v-btn>
     </v-bottom-navigation>
   </div>
@@ -102,23 +77,19 @@ export default {
   name: "Inicio",
   data: () => ({
     activeShift: false,
-    headerImg:[
+    headerImg: [
       {
-      img:require('@/assets/images/icons/pcelogo.png')
+        img: require("@/assets/images/icons/pcelogo.png"),
       },
-            {img:require('@/assets/images/icons/utmachlogo.png')
-      },
-            {
-      img:require('@/assets/images/icons/fcslogo.png')
+      { img: require("@/assets/images/icons/utmachlogo.png") },
+      {
+        img: require("@/assets/images/icons/fcslogo.png"),
       },
     ],
-      headerText:[
-      {text:"UNIVERSIDAD TÉCNICA DE MACHALA",
-      },
-            {text:"FACULTAD DE CIENCIAS SOCIALES",
-      },
-            {text:"PEDAGOGíA DE LAS CIENCIAS EXPERIMENTALES",
-      },
+    headerText: [
+      { text: "UNIVERSIDAD TÉCNICA DE MACHALA" },
+      { text: "FACULTAD DE CIENCIAS SOCIALES" },
+      { text: "PEDAGOGíA DE LAS CIENCIAS EXPERIMENTALES" },
     ],
   }),
   mounted() {
