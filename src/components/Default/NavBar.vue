@@ -1,5 +1,21 @@
 <template>
   <div>
+    <p
+      style="
+        position: fixed;
+        left: 80%;
+        width: 20%;
+        text-align: right;
+        z-index: 10;
+        font-size: large;
+        color: white;
+      "
+    >
+      <span>
+        | {{ contadorVisitas }} VISITAS |
+        <br />
+      </span>
+    </p>
     <center>
       <v-row>
         <v-col lg="4" cols="4" md="4" sm="4"> </v-col>
@@ -74,6 +90,7 @@ export default {
   components: {},
   name: "Inicio",
   data: () => ({
+    contadorVisitas: 0,
     activeShift: false,
     headerImg: [
       {
@@ -95,6 +112,24 @@ export default {
     if (ws < 599) {
       this.activeShift = true;
     }
+    this.requestGetAll(`/obtener-visitas`, 0);
+  },
+  methods: {
+    async requestGetAll(url, page) {
+      var data = 0;
+      this.$http
+        .get(url + `?page=${page}`)
+        .then((res) => {
+          //this.$http.get(url).then(res => {
+          data = res.data.total;
+        })
+        .catch(() => {
+          console.log("no existen visitas");
+        })
+        .finally(() => {
+          this.contadorVisitas = data;
+        });
+    },
   },
 };
 </script>

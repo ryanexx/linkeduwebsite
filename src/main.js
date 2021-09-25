@@ -10,20 +10,19 @@ import VueMeta from 'vue-meta';
 import "./plugins/toasted";
 import './plugins/axios';
 require('moment/locale/es');
-
 Vue.config.productionTip = false
+Vue.prototype.$request = { post: null };
 Vue.prototype.$env = {
   api: Config.api,
   appName: Config.appName
 };
 Vue.use(Auth);
-Vue.use(require('vue-moment'),{ 
+Vue.use(require('vue-moment'), {
   moment
 });
 Vue.use(VueMeta, {
   keyName: 'head'
 })
-
 new Vue({
   router,
   store,

@@ -33,7 +33,6 @@ const routes = [
     redirect: '/start'
   }
 ]
-
 const router = new VueRouter({
   routes,
   mode: 'history'

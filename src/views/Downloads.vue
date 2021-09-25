@@ -92,7 +92,7 @@
                             <v-btn
                               color="primary"
                               @click="
-                                archiveDownload(
+                                newDownload(
                                   num,
                                   data.data[0].select,
                                   data.data[1].select
@@ -103,6 +103,34 @@
                               DESCARGAR
                             </v-btn>
                           </center>
+                          <p
+                            v-if="num == 0"
+                            style="
+                              width: 90%;
+                              text-align: right;
+                              font-size: small;
+                              color: white;
+                            "
+                          >
+                            <span>
+                              | {{ contadorDescargas.app }} DESCARGAS |
+                              <br />
+                            </span>
+                          </p>
+                          <p
+                            v-else
+                            style="
+                              width: 90%;
+                              text-align: right;
+                              font-size: small;
+                              color: white;
+                            "
+                          >
+                            <span>
+                              | {{ contadorDescargas.pc }} DESCARGAS |
+                              <br />
+                            </span>
+                          </p>
                           <br />
                         </div>
                       </v-card>
@@ -133,11 +161,7 @@ export default {
   },
   data() {
     return {
-      panel: [],
-      panel1: 0,
-      panel2: 0,
-      items: 1,
-      iconmobile: require("@/assets/images/downloads/mobile.svg"),
+      contadorDescargas: [],
       archives: [
         {
           title: "DISPOSITIVOS MÓVILES",
@@ -206,10 +230,16 @@ export default {
   created() {},
   mounted() {
     if (this.$route) this.route = this.$route.query.redirect;
-    this.all();
+    this.requestGetAll(`/obtener-descargas`, 0);
   },
   methods: {
-    archiveDownload(aux, aux2, aux3) {
+    newDownload(aux, aux2, aux3) {
+      var form = {
+        type: this.archives[aux].type,
+        so: this.archives[aux].data[0].options[aux2],
+        version: this.archives[aux].data[1].options[aux3],
+      };
+      this.$request.post(`/registrar-descarga`, form);
       var a = aux3;
       if (aux == 1) {
         a = aux2;
@@ -217,11 +247,19 @@ export default {
       var url = this.archives[aux].data[1].archives[a];
       window.open(url);
     },
-    datas() {
-      alert(this.panel1);
-    },
-    all() {
-      this.panel = [...Array(this.items.length).keys()].map((k, i) => i);
+    async requestGetAll(url, page) {
+      var data = 0;
+      this.$http
+        .get(url + `?page=${page}`)
+        .then((res) => {
+          data = res.data.total;
+        })
+        .catch(() => {
+          console.log("no existen Descargas");
+        })
+        .finally(() => {
+          this.contadorDescargas = data;
+        });
     },
   },
 };

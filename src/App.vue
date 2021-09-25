@@ -59,6 +59,7 @@ export default {
     ],
   },
   data: () => ({
+    contadorVisitas: 0,
     auth: false,
     bga: require("@/assets/images/bg.svg"),
   }),
@@ -66,7 +67,25 @@ export default {
     Navbar,
     Loader,
   },
-  methods: {},
+  created() {
+    this.$request.post = this.requestPost;
+  },
+  methods: {
+    async requestPost(url, form) {
+      this.$http
+        .post(url, form)
+        .then((res) => {
+          if (res.data) {
+            console.log("petición exitosa");
+          }
+        })
+        .catch((err) => {
+          err = "";
+          console.log("petición erronea", err);
+        })
+        .finally();
+    },
+  },
 };
 </script>
 <style>

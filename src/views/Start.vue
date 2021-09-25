@@ -113,6 +113,9 @@ export default {
   mounted() {
     if (this.$route) this.route = this.$route.query.redirect;
   },
+  created() {
+    this.$request.post(`/registrar-visita`, true);
+  },
   methods: {},
 };
 </script>
